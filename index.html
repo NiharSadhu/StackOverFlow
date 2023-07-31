@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .contact-container {
+        display: none;
+    }
+
+    .contact-container.show {
+        display: block;
+    }
+</style>
+
+<body>
+    <input type="radio" name="contact" id="emailRadio" value="email">
+    <label for="emailRadio">Email</label>
+
+    <input type="radio" name="contact" id="phoneRadio" value="phone">
+    <label for="phoneRadio">Phone</label>
+
+    <div id="emailContainer" class="contact-container">
+        <!-- Add your email input fields or content here -->
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+    </div>
+
+    <div id="phoneContainer" class="contact-container">
+        <!-- Add your phone input fields or content here -->
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id="phone">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const emailRadio = document.getElementById('emailRadio');
+            const phoneRadio = document.getElementById('phoneRadio');
+            const emailContainer = document.getElementById('emailContainer');
+            const phoneContainer = document.getElementById('phoneContainer');
+
+            emailRadio.addEventListener('click', function () {
+                emailContainer.classList.add('show');
+                phoneContainer.classList.remove('show');
+            });
+
+            phoneRadio.addEventListener('click', function () {
+                phoneContainer.classList.add('show');
+                emailContainer.classList.remove('show');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
